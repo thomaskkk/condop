@@ -1,0 +1,30 @@
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
+
+CREATE SCHEMA IF NOT EXISTS `condop` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
+USE `condop` ;
+
+-- -----------------------------------------------------
+-- Table `condop`.`morador`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `condop`.`morador` (
+  `id` INT NOT NULL AUTO_INCREMENT ,
+  `Nome` VARCHAR(255) NOT NULL ,
+  `Cpf` VARCHAR(45) NULL ,
+  `Rg` VARCHAR(45) NULL ,
+  `TelContato` VARCHAR(45) NULL ,
+  `Email` VARCHAR(45) NULL ,
+  `DataNasc` VARCHAR(45) NULL ,
+  `Foto` VARCHAR(45) NULL ,
+  PRIMARY KEY (`id`) ,
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) ,
+  UNIQUE INDEX `Nome_UNIQUE` (`Nome` ASC) )
+ENGINE = InnoDB;
+
+USE `condop` ;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
